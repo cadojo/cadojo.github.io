@@ -56,6 +56,10 @@ topics:
     web_url: https://github.com/topics/flight-control 
     image_url: https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/271/rocket_1f680.png
 
+  - name: Control Systems
+    web_url: https://github.com/topics/control-systems
+    image_url: https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/271/control-knobs_1f39b-fe0f.png
+
   - name: C++ 
     web_url: https://github.com/topics/cpp
     image_url: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/cpp/cpp.png 
@@ -63,3 +67,7 @@ topics:
   - name: Julia 
     web_url: https://github.com/topics/julia
     image_url: https://raw.githubusercontent.com/github/explore/49e13f12be05e7e3f3616bb7a5030d70b259f320/topics/julia/julia.png 
+
+  - name: Rust
+    web_url: https://github.com/topics/rust
+    image_url: https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/rust/rust.png
