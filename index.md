@@ -4,4 +4,4 @@
 
 # About Me
 
-\blurb{More to come!}
+More to come!
