@@ -1,11 +1,7 @@
-+++
-title = "Personal Website"
-tags = ["syntax", "code"]
+@def title = "Personal Website"
+@def hascode = true
+@def tags = ["syntax", "code"]
 
-+++
 # About Me
 
-<!-- \toc -->
-
-
-
+\blurb{More to come!}
