@@ -6,10 +6,8 @@
   {{if hasmath}} {{insert head_katex.html }}     {{end}}
   {{if hascode}} {{insert head_highlight.html }}   {{end}}
   {{insert style.html}}
-  {{isdef title}} <title>{{fill title}}</title>  {{end}}
+  {{isdef title}} <title>{{fill title}}</title> {{end}}
 </head>
-<body>                      <!-- closed in foot.html -->
-{{insert pgwrap.html}}
-
-
-<!-- Content appended here (in class franklin-content) -->
+<body>
+{{insert sidebar.html}}
+<!-- Content appended here -->

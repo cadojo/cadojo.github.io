@@ -1,6 +1,6 @@
-@def title = "Personal Website"
+@def title = "About Me"
 @def hascode = true
-@def tags = ["syntax", "code"]
+@def tags = ["interests", "academics", "personal", "background"]
 
 # About Me
 
