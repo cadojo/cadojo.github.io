@@ -14,7 +14,7 @@ Guidance, Navigation, and Controls Engineer (emphasis on _Controls_).
 
 * __Force control__ law implementation for robot manipulators (largely with C++, and Julia for algorithmic design and testing). There are many different applications for force control. The one I'm personally most excited for is [simulating "zero gravity"](https://www.youtube.com/watch?v=4auVU5Ifvpw)!
 
-* __Poetry!__ A wonderful person recommended _Night Skies with Exit Wounds_ by [Ocean Vuong](https://www.oceanvuong.com), as well as a couple of poems by [Maggie Smith](https://maggiesmithpoet.com). These works, as well as a [beautiful interview](https://www.vox.com/podcasts/2020/2/27/21154139/tracy-k-smith-poet-laureate-the-ezra-klein-show-wade-in-the-water) with Tracyy K Smith (conducted by Ezra Klein), have introduced me to poetry for the first time in 10+ years. I've really enjoyed learning how to _read_, _analyze_, and _find_ poems, and I'm looking forward to learning more in 2021!
+* __Poetry!__ A wonderful person recommended _Night Skies with Exit Wounds_ by [Ocean Vuong](https://www.oceanvuong.com), as well as a couple of poems by [Maggie Smith](https://maggiesmithpoet.com). These works, as well as a [beautiful interview](https://www.vox.com/podcasts/2020/2/27/21154139/tracy-k-smith-poet-laureate-the-ezra-klein-show-wade-in-the-water) with Tracy K Smith (conducted by Ezra Klein), have introduced me to poetry for the first time in 10+ years. I've really enjoyed learning how to _read_, _analyze_, and _find_ poems, and I'm looking forward to learning more in 2021!
 
 * __Politics__, becuase all of my fellow Americans have been learning about politics these last few years.
 
