@@ -258,14 +258,12 @@ SIDE BAR
 
 .menu-list-link {
   display: block;
-  font-size: larger;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
 
 .menu-list-link.active {
   font-weight: 600;
-  font-size: larger;
   color: #27262b;
   text-decoration: none;
 }
