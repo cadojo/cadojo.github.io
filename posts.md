@@ -49,10 +49,3 @@ walking you through a real shithole, chirps on
 about good bones: This place could be beautiful,
 
 right? You could make this place beautiful.
-
-
-
-
-## Politics
-
-## Software

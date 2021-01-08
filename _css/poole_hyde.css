@@ -51,6 +51,36 @@ html {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
+  --accent-color: #2e5f6d;
+  --sidebar-link-color: #ffffff;
+  --accent-offset-color: #2e5f6d;
+  --light-text-color: #515151;
+  --abbreviation-color: #555;
+  --block-quote-color: #7a7a7a;
+  --strong-text-color: #303030;
+  --link-color: #268bd2;
+  --primary-color: rgb(255, 255, 255);
+  --primary-color-transparent: rgba(255, 255, 255, 0.5);
+  --primary-text-color: rgb(51, 51, 51);
+  --misc-color: #e5e5e5;
+  --misc-offset-color: #f9f9f9;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    --accent-color: #004353;
+    --sidebar-link-color: #c7c7c7;
+    --accent-offset-color: #2aa198;
+    --abbreviation-color: rgb(163, 163, 163);
+    --block-quote-color: #858585;
+    --strong-text-color: #c7c7c7;
+    --link-color: #004353;
+    --primary-color: #040404;
+    --primary-color-transparent: rgba(255, 255, 255, 0.5);
+    --primary-text-color: rgb(208, 208, 209);
+    --misc-color: #bdbdbd;
+    --misc-offset-color: #c4c4c4;
+  }
 }
 
 @media (min-width: 38em) {
@@ -60,15 +90,15 @@ html {
 }
 
 body {
-  color: #515151;
-  background-color: #fff;
+  color: var(--primary-text-color);
+  background-color: var(--primary-color);
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 
 /* No `:visited` state is required by default (browsers will use `a`) */
 a {
-  color: #268bd2;
+  color: var(--link-color);
   text-decoration: none;
 }
 
@@ -92,13 +122,13 @@ h6 {
   margin-bottom: 0.5rem;
   font-weight: bold;
   line-height: 1.25;
-  color: #313131;
+  color: var(--strong-text-color);
   text-rendering: optimizeLegibility;
 }
 
 h1 {
   font-size: 2rem;
-  color: #2e5f6d;
+  color: var(--accent-offset-color);
 }
 
 h2 {
@@ -125,7 +155,7 @@ p {
 }
 
 strong {
-  color: #303030;
+  color: var(--strong-text-color);
 }
 
 
@@ -150,28 +180,26 @@ hr {
   position: relative;
   margin: 1.5rem 0;
   border: 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #fff;
 }
 
 abbr {
   font-size: 85%;
   font-weight: bold;
-  color: #555;
+  color: var(--abbreviation-color);
   text-transform: uppercase;
 }
 
 abbr[title] {
   cursor: help;
-  border-bottom: 1px dotted #e5e5e5;
+  border-bottom: 1px dotted var(--abbreviation-color);
 }
 
 /* Quotes */
 blockquote {
   padding: 0.5rem 1rem;
   margin: 0.8rem 0;
-  color: #7a7a7a;
-  border-left: 0.25rem solid #e5e5e5;
+  color: var(--block-quote-color);
+  border-left: 0.25rem solid var(--misc-color);
 }
 
 blockquote p:last-child {
@@ -196,19 +224,19 @@ img {
 table {
   margin-bottom: 1rem;
   width: 100%;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--misc-color);
   border-collapse: collapse;
 }
 
 td,
 th {
   padding: 0.25rem 0.5rem;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--misc-color);
 }
 
 tbody tr:nth-child(odd) td,
 tbody tr:nth-child(odd) th {
-  background-color: #f9f9f9;
+  background-color: var(--misc-offset-color);
 }
 
 /*
@@ -258,8 +286,8 @@ html {
 .sidebar {
   text-align: center;
   padding: 2rem 1rem;
-  color: rgba(255, 255, 255, 0.5);
-  background-color: #2e5f6d;
+  color: var(--primary-color-transparent);
+  background-color: var(--accent-color);
 }
 
 @media (min-width: 768px) {
@@ -275,12 +303,12 @@ html {
 
 /* Sidebar links */
 .sidebar a {
-  color: #fff;
+  color: var(--sidebar-link-color);
 }
 
 /* About section */
 .sidebar-about h1 {
-  color: #fff;
+  color: var(--sidebar-link-color);
   margin-top: 0;
   font-family: "Abril Fatface", serif;
   font-size: 3rem;
