@@ -4,7 +4,7 @@
 
 # About Me
 
-I'm an aerospace engineering student __(he/him)__, who is currently working to complete a 
+I'm an aerospace engineering student __(he/him)__ who is currently working to complete a 
 Master of Science at the University of Maryland in College Park. After graduating
 in May 2021, I will be working full time in the Space Industry as a 
 Guidance, Navigation, and Controls Engineer (emphasis on _Controls_). 
