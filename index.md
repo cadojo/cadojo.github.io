@@ -4,10 +4,13 @@
 
 # About Me
 
-I'm an aerospace engineering student __(he/him)__ who is currently working to complete a 
-Master of Science at the University of Maryland in College Park. After graduating
-in May 2021, I will be working full time in the Space Industry as a 
-Guidance, Navigation, and Controls Engineer (emphasis on _Controls_). 
+\makeprofile{/assets/profile-light.png}{Profile picture.}{
+    I'm an aerospace engineering MS student <b>(he/him)</b> at the 
+    University of Maryland. After graduating in 
+    May 2021, I'll be working full time in the space industry 
+    as a GN&C Engineer!
+}
+
 
 ### Academic Interests
 * __Julia development__, with emphasis in projects relating to astrodynamics, robot kinematics, and dynamics & controls. 

@@ -26,5 +26,30 @@ pages. It can be math commands but does not need to be.
 For instance:
 * \newcommand{\phrase}{This is a long phrase to copy.}
 -->
-\newcommand{\R}{\mathbb R}
-\newcommand{\scal}[1]{\langle #1 \rangle}
+\newcommand{\html}[1]{~~~#1~~~}
+\newcommand{\socials}[0]{\html{
+    <div class="allsocials">
+    <a href="mailto:jdcarpinelli@gmail.com" <i class="fas fa-envelope"></i></a>
+    <a href="https://github.com/cadojo" <i class="fab fa-github"></i></a>
+    <a href="https://instagram.com/joeycarpinelli" <i class="fab fa-instagram"></i></a>
+    <a href="https://twitter.com/cadojo_" <i class="fab fa-twitter"></i></a>
+    </div>
+}}
+\newcommand{\profilepic}[2]{\html{<img class="profile-pic" src="#1" alt="#2">}}
+\newcommand{\profilebio}[1]{\html{
+    <div class="profile-bio">
+        !#1
+        <br> <br>
+        <a href="mailto:jdcarpinelli@gmail.com" target="_blank" <i class="fas fa-envelope"></i></a> &thinsp;
+        <a href="https://github.com/cadojo" target="_blank" <i class="fab fa-github"></i></a> &thinsp;
+        <a href="https://instagram.com/joeycarpinelli" target="_blank"  <i class="fab fa-instagram"></i></a> &thinsp;
+        <a href="https://twitter.com/cadojo_" target="_blank" <i class="fab fa-twitter"></i></a>
+    </div>}
+}
+
+\newcommand{\makeprofile}[3]{
+    @@profile
+    \profilepic{!#1}{!#2}
+    \profilebio{!#3}
+    @@
+}

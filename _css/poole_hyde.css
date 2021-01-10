@@ -51,7 +51,7 @@ html {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  --accent-color: #2e5f6d;
+  --accent-color: #417786;
   --sidebar-link-color: #ffffff;
   --accent-offset-color: #2e5f6d;
   --light-text-color: #515151;
@@ -60,6 +60,7 @@ html {
   --strong-text-color: #303030;
   --link-color: #268bd2;
   --primary-color: rgb(255, 255, 255);
+  --primary-offset-color: rgb(253,245,220);
   --primary-color-transparent: rgba(255, 255, 255, 0.5);
   --primary-text-color: rgb(51, 51, 51);
   --misc-color: #e5e5e5;
@@ -76,11 +77,48 @@ html {
     --strong-text-color: #c7c7c7;
     --link-color: #004353;
     --primary-color: #040404;
+    --primary-offset-color: #2e5f6d;
     --primary-color-transparent: rgba(255, 255, 255, 0.5);
     --primary-text-color: rgb(208, 208, 209);
     --misc-color: #bdbdbd;
     --misc-offset-color: #c4c4c4;
   }
+  .profile-pic {
+    content: url("/assets/profile-dark.png");
+  }
+}
+
+.profile {
+  display: table;
+  flex-direction: column;
+  min-height: fit-content;
+  width: 92%;
+  margin-left: 4%;
+  background-color: var(--primary-offset-color);
+  border-left: 10px solid var(--accent-offset-color);
+  border-right: 10px solid var(--primary-offset-color);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.profile .profile-pic {
+  display: table-cell;
+  vertical-align: middle;
+  overflow: cover;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: -10%;
+  width: max-content;
+}
+
+.profile .profile-bio {
+  display: table-cell;
+  vertical-align: middle;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  text-align: left;
+  font-size: 12pt;
+  overflow: cover;
 }
 
 @media (min-width: 38em) {
