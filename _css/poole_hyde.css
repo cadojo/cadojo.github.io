@@ -65,6 +65,7 @@ html {
   --primary-text-color: rgb(51, 51, 51);
   --misc-color: #e5e5e5;
   --misc-offset-color: #f9f9f9;
+  --profile-card-flex-direction: column;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -90,7 +91,7 @@ html {
 
 .profile {
   display: table;
-  flex-direction: column;
+  flex-direction: var(--profile-card-flex-direction);
   min-height: fit-content;
   width: 92%;
   margin-left: 4%;
@@ -123,6 +124,7 @@ html {
 
 @media (min-width: 38em) {
   html {
+    --profile-card-flex-direction: row;
     font-size: 20px;
   }
 }
