@@ -9,12 +9,28 @@
 
 ## Poetry
 
+### After the Insurrection at the Capital, I read _Good Bones_
+
+I miss circling back to fragments of _Good Bones_  
+
+when history rhymed.  
+
+Through thick fog and amber waves  
+
+of grain, mobs stormed, breached, coughed, screamed. Myths of fraud  
+
+and frightened observers. With great   
+
+purpose and no cause, the people lept.
+
+
 ### An Unoriginal Article 
 Last Updated: Wednesday January 6th, 3:52PM
 
 Hi Casey, you're wonderful!! My content isn't here (and doesn't exist) yet, so here's some of Maggie Smith's.
 
-#### Good Bones _by Maggie Smith_
+#### Good Bones
+_Maggie Smith_
 
 Life is short, though I keep this from my children.
 
