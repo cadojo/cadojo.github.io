@@ -70,7 +70,7 @@ html {
 
 @media (prefers-color-scheme: dark) {
   html {
-    --accent-color: #004353;
+    --accent-color: #2e5f6d;
     --sidebar-link-color: #c7c7c7;
     --accent-offset-color: #2aa198;
     --abbreviation-color: rgb(163, 163, 163);
