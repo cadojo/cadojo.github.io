@@ -335,7 +335,7 @@ html {
     top: 0;
     left: 0;
     bottom: 0;
-    width: 15rem;
+    width: 18rem;
     text-align: left;
   }
   html {
@@ -353,7 +353,7 @@ html {
   color: var(--sidebar-link-color);
   margin-top: 0;
   font-family: "Abril Fatface", serif;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 /* Sidebar nav */
