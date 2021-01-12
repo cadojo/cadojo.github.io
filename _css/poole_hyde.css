@@ -356,6 +356,11 @@ html {
   font-size: 2.5rem;
 }
 
+.sidebar .lead {
+  font-size: medium;
+  font-style: italic;
+}
+
 /* Sidebar nav */
 .sidebar-nav {
   margin-bottom: 1rem;
