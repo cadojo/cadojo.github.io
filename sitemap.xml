@@ -2,12 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-    <loc>https://cadojo.github.io/_posts/2021-01-06-An-Unoriginal-Article/index.html</loc>
-    <lastmod>2021-01-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>https://cadojo.github.io/projects/index.html</loc>
     <lastmod>2021-01-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -26,12 +20,6 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://cadojo.github.io/software/index.html</loc>
-    <lastmod>2021-01-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>https://cadojo.github.io/posts/index.html</loc>
     <lastmod>2021-01-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -44,13 +32,7 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>https://cadojo.github.io/politics/index.html</loc>
-    <lastmod>2021-01-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>https://cadojo.github.io/poetry/index.html</loc>
+    <loc>https://cadojo.github.io/_posts/2021-01-06-An-Unoriginal-Article/index.html</loc>
     <lastmod>2021-01-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
