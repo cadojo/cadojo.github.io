@@ -1,6 +1,19 @@
 #
 # Utility functions for use with Franklin.jl
 #
+import Dates
+
+"""
+Returns string of Julia code representing
+the date at which a page was last modified.
+"""
+function lx_lastmodified(com, _)
+    # Argument should be filepath
+    content = Franklin.content(com.braces[1])
+    isfile(content) || throw(ArgumentError("Invalid filepath provided to \\lastmodified"))
+    y,m,d = map(x->x(t), (Dates.year, Dates.month, Dates.day))
+    return "Date($(y), $(m), $(d))"
+end
 
 """
 Parses hardcoded subdirectories for blog posts, 
@@ -12,18 +25,20 @@ __References:__
 """
 function hfun_parseposts()
 
-    # Hardcode
-    ismd(f)    =  endswith(f, ".md")
-    onlymd(l)  =  filter(ismd, l)
-    onlydir(l) =  filter(isdir, l)
-    
+    # Hardcoded helper functions
+    ismd(f)       =  endswith(f, ".md")
+    onlymd(l)     =  filter(ismd, l)
+    onlydir(l)    =  filter(isdir, l)
+    onlyname(s)   =  last(splitpath(s))
+    getdate(f)    =  Dates.unix2datetime(stat(f).mtime)
+    sortbydate(l) =  sort(l; by=getdate)
     # Get subdirs
-    subdirs = readdir("writing"; join=true) |> onlydir
+    subdirs = readdir("writing"; join=true) |> onlydir .|> onlyname
 
     # Get filepaths to all Markdown files
-    paths = Vector{String}()
+    paths = Dict{String, Vector{String}}(subdirs .=> [Vector{String}() for i ∈ 1:length(subdirs)])
     for subdir ∈ subdirs
-        append!(paths, readdir(subdir; join=true) |> onlymd)
+        append!(paths[subdir], readdir(joinpath("writing", subdir); join=true) |> onlymd |> sortbydate)
     end
 
     #==
@@ -42,6 +57,6 @@ function hfun_parseposts()
     return String(take!(io))
 
     ==#
-
     paths
+
 end
