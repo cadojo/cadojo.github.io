@@ -48,7 +48,7 @@ body {
 }
 
 html {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.5;
   --accent-color: #2e5f6d;
@@ -312,7 +312,7 @@ tbody tr:nth-child(odd) th {
  */
 
 html {
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 /*
@@ -352,7 +352,7 @@ html {
 .sidebar-about h1 {
   color: var(--sidebar-link-color);
   margin-top: 0;
-  font-family: "Abril Fatface", serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 2.5rem;
 }
 
