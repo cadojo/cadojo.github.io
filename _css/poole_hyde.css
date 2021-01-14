@@ -79,7 +79,6 @@ html {
   border-right: 10px solid var(--primary-offset-color);
   border-radius: 10px;
   padding: 10px;
-  box-shadow: 0px 0px 0px 1.5px var(--primary-text-color);
 }
 
 @media (prefers-color-scheme: dark) {
