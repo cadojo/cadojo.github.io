@@ -16,6 +16,25 @@ function lx_lastmodified(com, _)
 end
 
 """
+Returns post card. 
+"""
+function postcard(path, picture, alt, bio)
+
+    title = last(splitpath(path))
+    mdate = Dates.unix2datetime(stat(path).mtime)
+
+    html = """
+    <div class="postcard">
+        <img class="post-pic" src="$picture" alt="$alt">
+        <p class="post-bio"> <b class="post-title">$title</b> <br> <i class="post-stamp">Posted on $(Dates.monthname(mdate)) $(Dates.day(mdate)), $(Dates.year(mdate)) </i> <br><br> $bio </p>
+    </div>
+    """
+
+    return html
+
+end
+
+"""
 Parses hardcoded subdirectories for blog posts, 
 and then generates headers and cards for each
 post.
@@ -23,7 +42,9 @@ post.
 __References:__  
 [1] https://franklinjl.org/syntax/utils/index.html
 """
-function hfun_parseposts()
+function lx_allposts(com, _)
+
+    content = Franklin.content(com.braces[1])
 
     # Hardcoded helper functions
     ismd(f)       =  endswith(f, ".md")
@@ -32,8 +53,9 @@ function hfun_parseposts()
     onlyname(s)   =  last(splitpath(s))
     getdate(f)    =  Dates.unix2datetime(stat(f).mtime)
     sortbydate(l) =  sort(l; by=getdate)
+
     # Get subdirs
-    subdirs = readdir("writing"; join=true) |> onlydir .|> onlyname
+    subdirs = readdir("writing"; join=true) |> onlydir .|> onlyname |> sort
 
     # Get filepaths to all Markdown files
     paths = Dict{String, Vector{String}}(subdirs .=> [Vector{String}() for i ∈ 1:length(subdirs)])
@@ -41,22 +63,21 @@ function hfun_parseposts()
         append!(paths[subdir], readdir(joinpath("writing", subdir); join=true) |> onlymd |> sortbydate)
     end
 
-    #==
-    list = readdir("blog")
-    filter!(f -> endswith(f, ".md"), list)
-    dates = [stat(joinpath("blog", f)).mtime for f in list]
-    perm = sortperm(dates, rev=true)
-    idxs = perm[1:min(3, length(perm))]
-    io = IOBuffer()
-    write(io, "<ul>")
-    for (k, i) in enumerate(idxs)
-        fi = "/blog/" * splitext(list[i])[1] * "/"
-        write(io, """<li><a href="$fi">Post $k</a></li>\n""")
-    end
-    write(io, "</ul>")
-    return String(take!(io))
+    # Initialize return string
+    lx = ""
 
-    ==#
-    paths
+    # Sort subdirs
+    for subdir ∈ subdirs
+        lx *= string("## ", subdir, "\n",)
+
+        for path ∈ paths[subdir]
+            lx *= string(
+                "\n~~~\n", postcard(path, "/assets/profile-light.png", "Temporary picture.", 
+                    "The first poem I've ever written! Not yet published :)"), "\n~~~\n"
+            )
+        end
+    end
+    
+    return lx
 
 end
