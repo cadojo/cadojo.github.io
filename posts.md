@@ -1,8 +1,11 @@
 @def title = "Posts"
 @def rss = "Posts authored by Joey Carpinelli."
 @def rss_title = "Posts"
-@def rss_pubdate = Date(2020, 1, 7)
 @def tags = ["poetry", "software", "politics", "blog", "writing"]
 
-# Blog Posts
+# Posts
 
+
+This is a collection of personal writing. There's not a whole lot here yet, but I'll continue working on this throughout 2021! 
+
+\allposts{}

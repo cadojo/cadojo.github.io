@@ -69,18 +69,6 @@ html {
   --profile-card-flex-direction: table-row;
 }
 
-.profile {
-  display: table;
-  min-height: fit-content;
-  width: 92%;
-  margin-left: 4%;
-  background-color: var(--primary-offset-color);
-  border-left: 10px solid var(--accent-offset-color);
-  border-right: 10px solid var(--primary-offset-color);
-  border-radius: 10px;
-  padding: 10px;
-}
-
 @media (prefers-color-scheme: dark) {
   html {
     --accent-color: #2e5f6d;
@@ -106,6 +94,18 @@ html {
   }
 }
 
+.profile {
+  display: table;
+  min-height: fit-content;
+  width: 92%;
+  margin-left: 4%;
+  background-color: var(--primary-offset-color);
+  border-left: 10px solid var(--accent-offset-color);
+  border-right: 10px solid var(--primary-offset-color);
+  border-radius: 10px;
+  padding: 10px;
+}
+
 .profile .profile-pic {
   display: var(--profile-card-flex-direction);
   vertical-align: middle;
@@ -114,7 +114,7 @@ html {
   margin-top: 2%;
   margin-bottom: 2%;
   margin-left: -4%;
-  width: max-content;
+  width: 100%;
 }
 
 .profile .profile-bio {
@@ -125,7 +125,43 @@ html {
   text-align: left;
   font-size: 12pt;
   overflow: cover;
+  width: 50%;
 }
+
+.postcard {
+  display: table;
+  min-height: fit-content;
+  width: 80%;
+  margin-left: 10%;
+  background-color: var(--primary-offset-color);
+  border-left: 10px solid var(--accent-offset-color);
+  border-right: 10px solid var(--primary-offset-color);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.postcard .post-pic {
+  display: var(--profile-card-flex-direction);
+  vertical-align: middle;
+  justify-content: center;
+  overflow: cover;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: -4%;
+  width: 100%;
+}
+
+.postcard .post-bio {
+  display: var(--profile-card-flex-direction);
+  vertical-align: middle;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  text-align: left;
+  font-size: normal;
+  overflow: cover;
+  width: 50%;
+}
+
 
 @media (min-width: 38em) {
   html {
