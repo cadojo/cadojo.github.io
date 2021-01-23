@@ -7,6 +7,14 @@
   <atom:link href="https://cadojo.github.io/tag/software/feed.xml" rel="self" type="application/rss+xml" />
   <item>
     <title><![CDATA[Posts]]></title>
+    <link>https://cadojo.github.io/writing/Poetry/reading-good-bones/</link>
+    <description><![CDATA[Posts authored by Joey Carpinelli.
+<br><a href="https://cadojo.github.io/writing/Poetry/reading-good-bones/">Read more</a>]]></description>
+    <guid>https://cadojo.github.io/writing/Poetry/reading-good-bones/</guid>
+    <pubDate>Sat, 23 Jan 2021 00:00:00 UT</pubDate>
+  </item>
+  <item>
+    <title><![CDATA[Posts]]></title>
     <link>https://cadojo.github.io/posts/</link>
     <description><![CDATA[Posts authored by Joey Carpinelli.
 <br><a href="https://cadojo.github.io/posts/">Read more</a>]]></description>
