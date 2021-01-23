@@ -133,10 +133,12 @@ html {
   min-height: fit-content;
   width: 80%;
   margin-left: 10%;
-  background-color: var(--primary-offset-color);
-  border-left: 10px solid var(--accent-offset-color);
-  border-right: 10px solid var(--primary-offset-color);
-  border-radius: 10px;
+  background-color: var(--primary-color);
+  border-left: 7px solid var(--accent-offset-color);
+  border-right: 7px solid var(--accent-offset-color);
+  border-top: 7px solid var(--accent-offset-color);
+  border-bottom: 7px solid var(--accent-offset-color);
+  border-radius: 7px;
   padding: 10px;
 }
 
