@@ -16,22 +16,94 @@ function lx_lastmodified(com, _)
 end
 
 """
+Finds if post is published.
+"""
+function ispublished(path)
+    return postelement(path, "published") == "true"
+end
+
+
+"""
+Finds the title of a post.
+"""
+function posttitle(path)
+    isfile(path) || throw(ArgumentError("File $path does not exist!"))
+    lines = open(path, "r") do file
+        readlines(file)
+    end
+    for line ∈ lines
+        if occursin("@def title", line)
+            return split(line, "\"")[2] |> string
+        end
+    end
+    return
+end
+
+"""
+Finds the bio of a post.
+"""
+function postbio(path)
+    isfile(path) || throw(ArgumentError("File $path does not exist!"))
+    lines = open(path, "r") do file
+        readlines(file)
+    end
+    for line ∈ lines
+        if occursin("@def bio", line)
+            return split(line, "\"")[2] |> string
+        end
+    end
+    return
+end
+
+"""
+Finds the picture associated with the post.
+"""
+function postpicture(path)
+    isfile(path) || throw(ArgumentError("File $path does not exist!"))
+    lines = open(path, "r") do file
+        readlines(file)
+    end
+    for line ∈ lines
+        if occursin("@def picture", line)
+            return split(line, "\"")[2] |> string
+        end
+    end
+    return
+end
+
+"""
+Finds an element associated with a post.
+"""
+function postelement(path, element)
+isfile(path) || throw(ArgumentError("File $path does not exist!"))
+lines = open(path, "r") do file
+    readlines(file)
+end
+for line ∈ lines
+    if occursin("@def $element", line)
+        return split(line, "\"")[2] |> string
+    end
+end
+return
+end
+
+
+"""
 Returns post card. 
 """
-function postcard(path, picture, alt, bio)
+function postcard(path)
 
-    title = last(splitpath(path))
-    mdate = Dates.unix2datetime(stat(path).mtime)
+    title = posttitle(path)
+    bio = postbio(path)
+    picture, alt = postelement.(path, ("picture", "picturealt"))
+    date = postelement(path, "publishdate")
 
-    html = """
+    return """
     <div class="postcard">
         <img class="post-pic" src="$picture" alt="$alt">
-        <p class="post-bio"> <b class="post-title">$title</b> <br> <i class="post-stamp">Posted on $(Dates.monthname(mdate)) $(Dates.day(mdate)), $(Dates.year(mdate)) </i> <br><br> $bio </p>
+        <p class="post-bio"> <b class="post-title"><a href=../$(replace(replace(path, " "=>"%20"), ".md"=>""))>$title</a></b> <br> <i class="post-stamp">Posted on $date </i> <br><br> $bio </p>
     </div>
     """
-
-    return html
-
 end
 
 """
@@ -53,6 +125,7 @@ function lx_allposts(com, _)
     onlyname(s)   =  last(splitpath(s))
     getdate(f)    =  Dates.unix2datetime(stat(f).mtime)
     sortbydate(l) =  sort(l; by=getdate)
+    onlypublished(l) = filter(ispublished, l)
 
     # Get subdirs
     subdirs = readdir("writing"; join=true) |> onlydir .|> onlyname |> sort
@@ -60,7 +133,7 @@ function lx_allposts(com, _)
     # Get filepaths to all Markdown files
     paths = Dict{String, Vector{String}}(subdirs .=> [Vector{String}() for i ∈ 1:length(subdirs)])
     for subdir ∈ subdirs
-        append!(paths[subdir], readdir(joinpath("writing", subdir); join=true) |> onlymd |> sortbydate)
+        append!(paths[subdir], readdir(joinpath("writing", subdir); join=true) |> onlymd |> onlypublished |> sortbydate)
     end
 
     # Initialize return string
@@ -68,12 +141,13 @@ function lx_allposts(com, _)
 
     # Sort subdirs
     for subdir ∈ subdirs
-        lx *= string("## ", subdir, "\n",)
+        if !isempty(paths[subdir])
+            lx *= string("## ", subdir, "\n",)
+        end
 
-        for path ∈ paths[subdir]
+        for path ∈ filter(ispublished, paths[subdir])
             lx *= string(
-                "\n~~~\n", postcard(path, "/assets/profile-light.png", "Temporary picture.", 
-                    "The first poem I've ever written! Not yet published :)"), "\n~~~\n"
+                "\n~~~\n", postcard(path), "\n~~~\n"
             )
         end
     end
