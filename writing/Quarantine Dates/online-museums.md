@@ -4,7 +4,7 @@
 @def tags = ["blog", "writing", "learn"]
 @def ispost=true
 
-@def bio="Do you want to go on a museum date, but everything is closed? Here are some promising online exhibits!"
+@def bio="A quick collection of fun online exhibits!"
 @def published="true"
 @def publishdate="January 23rd, 2021"
 @def picture="/assets/online-museums.png"
@@ -20,11 +20,9 @@
 \html{<h2>Overview </h2>}
 \toc
 
-My girlfriend and I have been looking for online museum exhibits that are Covid-safe. 
-There are a lot of interesting exhibits that are fully virtual! This post contains 
+Casey and I have been looking for online museum exhibits that are Covid-safe. 
+There are a lot of interesting exhibits that are fully virtual! This page contains 
 a short list of some promising online museum tours & displays. 
-
-I can update this as we find more! 😊
 
 ## [Arts and Culture by Google](https://artsandculture.google.com)
 
@@ -38,5 +36,5 @@ American writers throughout history. Their [Frederick Douglass Exhibit](https://
 ## [National Women's History Museum](https://www.womenshistory.org/womens-history/online-exhibits) 
 The National Women's History Museum has an insane amount of cool exhibits online. 
 The [NASA](https://www.womenshistory.org/exhibits/women-nasa) looks really cool, but so 
-do so many others!
+do so many others.
 

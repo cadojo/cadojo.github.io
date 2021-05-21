@@ -35,7 +35,7 @@ For instance:
         <a href="mailto:jdcarpinelli@gmail.com" target="_blank" <i class="fas fa-envelope"></i></a> &thinsp;
         <a href="https://github.com/cadojo" target="_blank" <i class="fab fa-github"></i></a> &thinsp;
         <a href="https://instagram.com/joeycarpinelli" target="_blank"  <i class="fab fa-instagram"></i></a> &thinsp;
-        <a href="https://twitter.com/cadojo_" target="_blank" <i class="fab fa-twitter"></i></a>
+        <a href="https://twitter.com/code_typed" target="_blank" <i class="fab fa-twitter"></i></a>
     </div>}
 }
 
