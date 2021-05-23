@@ -59,7 +59,7 @@ html {
   --abbreviation-color: #555;
   --block-quote-color: #56776c;
   --strong-text-color: #56776c;
-  --link-color: #464f41;
+  --link-color: #56776c;
   --primary-color: rgb(255, 255, 255);
   --primary-offset-color: rgb(253,245,220);
   --primary-color-transparent: rgba(255, 255, 255, 0.5);
@@ -78,7 +78,7 @@ html {
     --abbreviation-color: #f9f7f7;
     --block-quote-color: #f9f7f7;
     --strong-text-color: #f9f7f7;
-    --link-color: #dbe2ef;
+    --link-color: #6896cf;
     --primary-color: #040404;
     --primary-offset-color: #193b63;
     --primary-color-transparent: #dbe2efc0;
@@ -86,11 +86,9 @@ html {
     --misc-color: #f9f7f7;
     --misc-offset-color: #f9f7f7;
   }
-  .profile-pic {
+  .profile-picture {
     content: url("/assets/profile-dark.png");
-  }
-  .profile {
-    box-shadow: none;
+    size: 200px;
   }
 }
 
