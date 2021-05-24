@@ -9,36 +9,17 @@
 
   <channel>
     <title>
-      <![CDATA[  Personal Site  ]]>
+      <![CDATA[  {{fd2rss website_title}}  ]]>
     </title>
-    <link> https://cadojo.github.io </link>
+    <link> {{website_url}} </link>
     <description>
-      <![CDATA[  Background, projects, and words.  ]]>
+      <![CDATA[  {{fd2rss website_description}}  ]]>
     </description>
     <atom:link
-      href="https://cadojo.github.io/feed.xml"
+      href="{{fd_rss_feed_url}}"
       rel="self"
       type="application/rss+xml" />
 
-
-<item>
-  <title>
-    <![CDATA[  Resume  ]]>
-  </title>
-  <link> https://cadojo.github.io/resume/index.html </link>
-  <guid> https://cadojo.github.io/resume/index.html </guid>
-  <description>
-    <![CDATA[  Joey Carpinelli&#39;s resume.  ]]>
-  </description>  
-    
-  <pubDate>Mon, 24 May 2021 00:00:00 +0000</pubDate>  
-  
-  
-  <atom:author>
-    <atom:name>Joey Carpinelli</atom:name>
-  </atom:author>
-        
-</item>
 
 <item>
   <title>
@@ -67,25 +48,6 @@
   <guid> https://cadojo.github.io/posts/index.html </guid>
   <description>
     <![CDATA[  Posts authored by Joey Carpinelli.  ]]>
-  </description>  
-    
-  <pubDate>Mon, 24 May 2021 00:00:00 +0000</pubDate>  
-  
-  
-  <atom:author>
-    <atom:name>Joey Carpinelli</atom:name>
-  </atom:author>
-        
-</item>
-
-<item>
-  <title>
-    <![CDATA[  Online Museums&#33;  ]]>
-  </title>
-  <link> https://cadojo.github.io/writing/Fun/online-museums/index.html </link>
-  <guid> https://cadojo.github.io/writing/Fun/online-museums/index.html </guid>
-  <description>
-    <![CDATA[  A compilation of some interesting online exhibits.  ]]>
   </description>  
     
   <pubDate>Mon, 24 May 2021 00:00:00 +0000</pubDate>  

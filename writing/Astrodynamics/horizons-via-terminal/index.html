@@ -1,0 +1,85 @@
+<!doctype html> <html lang=en > <meta charset=UTF-8 > <meta name=viewport  content="width=device-width, initial-scale=1"> <link rel=stylesheet  href="/libs/highlight/github.min.css"> <link rel=stylesheet  href="/css/franklin.css"> <link rel=stylesheet  href="/css/poole_hyde.css"> <style> html {font-size: 17px;} .franklin-content {position: relative; padding-left: 8%; padding-right: 5%; line-height: 1.35em;} @media (min-width: 940px) { .franklin-content {width: 100%; margin-left: auto; margin-right: auto;} } @media (max-width: 768px) { .franklin-content {padding-left: 6%; padding-right: 6%;} } </style> <link rel=icon  href="/assets/favicon.png"> <link rel=preconnect  href="https://fonts.gstatic.com"> <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel=stylesheet > <title>Automated Ephemeris Requests for JPL HORIZONS</title> <script src="https://kit.fontawesome.com/96d5af76f0.js" crossorigin=anonymous ></script> <div class=sidebar > <img src="/assets/profile.png"/> <div class="container sidebar-sticky"> <div class=sidebar-about > <h1><a href="/">Joey Carpinelli</a></h1> <a href="mailto:jdcarpinelli@gmail.com" target=_blank  <i class="fas fa-envelope"></i></a> &thinsp; <a href="https://github.com/cadojo" target=_blank  <i class="fab fa-github"></i></a> &thinsp; <a href="https://instagram.com/joeycarpinelli" target=_blank  <i class="fab fa-instagram"></i></a> &thinsp; <a href="https://twitter.com/code_typed" target=_blank  <i class="fab fa-twitter"></i></a> <br><br> <div id=lead  class=lead > <script> let facts = [ 'Our planet\'s sky glows blue!', 'The Vatican has more popes per capita than anywhere else. ', 'There are more trees on Earth than stars in the Milky Way. ', 'Humans consume around 12 billion pounds of coffee per year. ', 'Earth is the only planet in our solar system with rainbows. ', 'Modern transisters are smaller than the wavelength of visible light. ', 'Computers use enough power to throw tow pounts across the room every second.', 'That shooting star you saw could\'ve been astronaut poop! ', 'In 2008, Norway knighted a penguin named Nils Olav. ', 'The most money ever paid for a cow in an auction was $1.3 million. ', 'Every year, about 98% of the atoms in your body are replaced. ', 'Elephants are the only mammals that can\'t jump. They are also the only mammals with four knees.', 'American car horns beep in the tone of F.', 'Cats can hear ultrasound.', 'The Neanderthal\'s brain was bigger than yours. Sorry.', '1 in 5,000 north Atlantic lobsters are born bright blue.' ]; let fact = facts[Math.floor(Math.random() * facts.length)]; document.querySelector("#lead").innerHTML = "<p>" + fact + "</p>"; </script> </div> </div> <nav class=sidebar-nav > <a class="sidebar-nav-item " href="/posts/">Posts</a> <a class="sidebar-nav-item " href="/resume/">Resume</a> </nav> </div> </div> <div class="content container"> <div class=franklin-content ><h1 id=title ><a href="#title" class=header-anchor >Automated Ephemeris Requests for JPL HORIZONS</a></h1> <div class=franklin-toc ><ol><li><a href="#overview">Overview</a><li><a href="#procedure">Procedure</a><ol><li><a href="#install_dependencies">Install Dependencies</a><li><a href="#download_jpl_scripts">Download JPL Scripts</a><li><a href="#set_input_parameters">Set Input Parameters</a><li><a href="#fetch_ephemeris_data">Fetch Ephemeris Data</a><li><a href="#re-format_ephemeris_data_optional">Re-format Ephemeris Data &#40;optional&#41;</a><li><a href="#example">Example</a></ol></ol></div> <h2 id=overview ><a href="#overview" class=header-anchor >Overview</a></h2> <p>NASA provides fantastic tools for personal use – one such tool is NASA JPL&#39;s <a href="https://ssd.jpl.nasa.gov/horizons.cgi">HORIZONS</a>. HORIZONS allows users to request positions, velocities, and physical attributes for thousands of bodies in our solar system. Users can request celestial body positions and velocities &#40;often referred to as <em>ephemeris</em>&#41; for several time steps. These orbital states are very accurately modeled&#33; Ephemeris models often include relativistic effects, solar radiation pressure, aspherical bodies, and more. After receiving a <em>grid</em> of orbital states from HORIZONS, a user can <em>interpolate</em> between timesteps to find precise orbital states at any time.</p> <p>HORIZONS has a <a href="https://ssd.jpl.nasa.gov/horizons.cgi">web interface</a>, and <a href="https://ssd.jpl.nasa.gov/?horizons#telnet">email and Telnet</a> interfaces. While the web interface is simple to use, it does not provide every capability offered by the email and Telnet interfaces. <strong>If you just want one ephemeris file for a specific use case, the web interface is probably ideal&#33;</strong> While I&#39;ve never used the email interface, I <em>have</em> used the Telnet interface – the Telnet interface can be invoked by entering <code>telnet://horizons.jpl.nasa.gov:6775</code> in a terminal of your choice. Otherwise, if you want to batch-request many ephemeris files, read on for a walkthrough for requesting ephemeris files from HORIZONS within a terminal, <em>without</em> manually walking through the Telnet interface&#33;</p> <h2 id=procedure ><a href="#procedure" class=header-anchor >Procedure</a></h2> <p>Rather than manually entering your desired ephemeris file attributes through HORIZONS&#39; web or Telnet interfaces, NASA JPL has provided open-source scripts for automatically fetching ephemeris data from JPL servers. The steps below provide all the information you need to use these scripts, and wrap them with a simple <code>.sh</code> script for ease of use.</p> <p>Note – the rest of this walkthrough requires you use a terminal within a Unix-like system. If you want to use a Windows machine, consider using the Windows Subsystem for Linux.</p> <p>If you follow the directions in this walkthrough verbatim, you&#39;ll fetch a CSV-formatted ephemeris file without any text labels, with columns &#40;from left to right&#41;: Julian day, X Position &#40;km&#41;, Y Position &#40;km&#41;, Z Position &#40;km&#41;, X Velocity &#40;km/s&#41;, Y Velocity &#40;km/s&#41;, Z Velocity &#40;km/s&#41;.</p> <h3 id=install_dependencies ><a href="#install_dependencies" class=header-anchor >Install Dependencies</a></h3> <p>JPL&#39;s scripts use <code>expect</code>, an automation tool, to interact with the HORIZONS Telnet interface &#40;so you don&#39;t have to&#41;. You will need both <code>expect</code> and <code>telnet</code> installed on your system. JPL&#39;s output ephemeris files contain carriage return characters that are not expected by Unix-like systems. You can install and use <code>sponge</code> &#40;often packaged with <code>moreutils</code>&#41;, as shown below, to help remove these carriage returns, and other extraneous information from the data files returned by HORIZONS. If you only wish to remove the carriage return characters, you can also simply open the output ephemeris file in <a href="https://code.visualstudio.com">VSCode</a> – this will re-format the file for your operating system.</p> <p><em>Installing Dependencies on MacOS:</em></p> <pre><code class=language-sh ># Uses Homebrew, a MacOs package manager: https://brew.sh
+brew install inetutils # provides telnet
+brew install expect    
+brew install moreutils # &#40;optional&#41; provides sponge</code></pre> <p><em>Installing Dependencies on Ubuntu:</em></p> <pre><code class=language-julia ># Uses apt, the default Ubuntu package manager
+sudo apt install telnet
+sudo apt install expect
+sudo apt install moreutils # &#40;optional&#41; provides sponge</code></pre> <p>Installation on other systems &#40;Debian, Arch, etc.&#41; is likely very similar to the installation commands above.</p> <h3 id=download_jpl_scripts ><a href="#download_jpl_scripts" class=header-anchor >Download JPL Scripts</a></h3> <p>Download <code>vec_tbl</code> and <code>vec_tbl.inp</code> from JPL&#39;s servers. The latter sets input parameters for your requested ephemeris data, the former is the ultimate script users can call to <em>get</em> ephemeris data.</p> <pre><code class=language-sh >wget ftp://ssd.jpl.nasa.gov/pub/ssd/SCRIPTS/vec_tbl
+wget ftp://ssd.jpl.nasa.gov/pub/ssd/SCRIPTS/vec_tbl.inp</code></pre> <p>We&#39;ll also need to make <code>vec_tbl</code> executable.</p> <pre><code class=language-sh >chmod u&#43;x vec_tbl</code></pre>
+<h3 id=set_input_parameters ><a href="#set_input_parameters" class=header-anchor >Set Input Parameters</a></h3>
+<p>The input file, <code>vec_tbl.inp</code>, sets environment variables that <code>vec_tbl</code> uses to walk through the HORIZONS Telnet interface  automatically. These parameters provide information like  &quot;where should the origin be placed&quot; and &quot;what time window,  and what size timesteps should be returned&quot;.</p>
+<p>Edit <code>vec_tbl.inp</code> with your desired ephemeris file parameters. Some helpful parameter values are provided below – these  parameters will result in an ephemeris format with the following  attributes:</p>
+<ul>
+<li><p>Origin placed at solar system barycenter</p>
+
+<li><p>CSV output with Cartesian coordinates</p>
+
+<li><p>Time window from 2020 to 2070, with 6-hour increments</p>
+
+<li><p>No text labels in the CSV data</p>
+
+</ul>
+<p>Note – you can replace <code>@ssb</code> with <code>@sun</code> to  place the origin of the ephemeris data at the  Sun&#39;s center of mass.</p>
+<pre><code class=language-sh >set   EMAIL_ADDR    &quot;your_email_address@aol.net&quot; ;
+set   CENTER        &quot;@ssb&quot;                       ;
+set   REF_PLANE     &quot;FRAME&quot;                      ;
+set   START_TIME    &quot;2020-Jan-1&quot;                 ;
+set   STOP_TIME     &quot;2070-Jan-1&quot;                 ;
+set   STEP_SIZE     &quot;6h&quot;                         ;
+set   CSV_FORMAT    &quot;YES&quot;                        ;
+set   VEC_TABLE     &quot;2&quot;                          ;
+set   REF_SYSTEM    &quot;J2000&quot;                      ;
+set   VEC_CORR      &quot;1&quot;                          ;
+set   OUT_UNITS     &quot;1&quot;                          ;
+set   CSV_FORMAT    &quot;YES&quot;                        ;
+set   VEC_LABELS    &quot;NO&quot;                         ;
+set   VEC_DELTA_T   &quot;NO&quot;                         ;
+set   VEC_TABLE     &quot;2&quot;                          ;</code></pre>
+<h3 id=fetch_ephemeris_data ><a href="#fetch_ephemeris_data" class=header-anchor >Fetch Ephemeris Data</a></h3>
+<p>Now we can use <code>vec_tbl</code> to download Ephemeris data for any celestial body tracked by HORIZONS. The usage for <code>vec_tbl</code> is shown below.</p>
+<pre><code class=language-sh >./vec_tbl &lt;BODY_ID&gt; &lt;OUTPUT_FILENAME&gt;</code></pre>
+<p>The second argument is the NAIF ID for the celestial body you&#39;d like to track. IDs for common solar system bodies are provided in the table below.</p>
+<table><tr><th align=right >Solar System Body<th align=right >NAIF ID<tr><td align=right >Mercury Barycenter<td align=right >1<tr><td align=right >Venus Barycenter<td align=right >2<tr><td align=right >Earth-Moon Barycenter<td align=right >3<tr><td align=right >Mars Barycenter<td align=right >4<tr><td align=right >Jupiter Barycenter<td align=right >5<tr><td align=right >Saturn Barycenter<td align=right >6<tr><td align=right >Uranus Barycenter<td align=right >7<tr><td align=right >Neptune Barycenter<td align=right >8<tr><td align=right >Pluto Barycenter<td align=right >9<tr><td align=right >Sun<td align=right >10<tr><td align=right >Mercury<td align=right >199<tr><td align=right >Venus<td align=right >299<tr><td align=right >Moon<td align=right >301<tr><td align=right >Earth<td align=right >399<tr><td align=right >Mars<td align=right >499<tr><td align=right >Jupiter<td align=right >599<tr><td align=right >Saturn<td align=right >699<tr><td align=right >Uranus<td align=right >799<tr><td align=right >Neptune<td align=right >899<tr><td align=right >Pluto<td align=right >999</table>
+<p>Note the output file will have a preamble, which  includes physical characteristics of your selected  celestial body, and other information.</p>
+<h3 id=re-format_ephemeris_data_optional ><a href="#re-format_ephemeris_data_optional" class=header-anchor >Re-format Ephemeris Data &#40;optional&#41;</a></h3>
+<p>The output format of the Ephemeris file will  depend on your input parameters provided  in <code>vec_tbl.inp</code>. If you&#39;re following  this walk-through verbatim &#40;aka using the input parameters provided above&#41;, then your output file will have 7 columns: Julian day, date-time label, X, Y, Z positions, X, Y, Z velocities. All columns are numeric,  with the exception of column 2 – this makes  loading data into MATLAB, Python, or Julia a bit more complicated. We don&#39;t need column 2  to interpolate between Cartesian states, because column 2 is simply a plain-language description of the Julian Day value in column 1. We can use <code>sed</code> and <code>awk</code> magic to strip out the second column,  and remove the preamble from the Ephemeris file.  The <code>sed</code> and <code>awk</code> commands below are taken directly from the two StackOverflow answers:  <a href="https://stackoverflow.com/a/38978201"><code>sed</code> reference</a>, <a href="https://unix.stackexchange.com/a/34686"><code>awk</code> reference</a>.</p>
+<pre><code class=language-sh ># Filter out data-file preamble
+sed -n &#39;/\&#36;\&#36;SOE/,/\&#36;\&#36;EOE/&#123;//&#33;p;&#125;&#39; &lt;OUTPUT_FILE | sponge &lt;OUTPUT_FILE&gt; 
+
+# Remove second column &#40;data-time label&#41;
+awk -F , &#39;BEGIN &#123;OFS&#61;FS&#125;  &#123;&#36;2&#61;&quot;&quot;; sub&#40;&quot;,,&quot;, &quot;,&quot;&#41;; print&#125;&#39; &lt;OUTPUT_FILE&gt; | sponge &lt;OUTPUT_FILE&gt;</code></pre>
+<p>Now your file will have only comma-delimited rows of numbers&#33; </p>
+<h3 id=example ><a href="#example" class=header-anchor >Example</a></h3>
+<p>Let&#39;s say you have one Ephemeris file &#40;with coordinates expressed with respect to the Sun&#41;: <code>Earth.txt</code>. Let&#39;s see what this Ephemeris data <em>looks</em> like for the first year of the selected time-window&#33; For the example  input parameters provided above, the first year would be between  January 1st 2020 and January 1st 2021.</p>
+<p>You could simply load the data with the <code>CSV</code> package, and plot the columns without any interpolation. But let&#39;s plot a specific  time window with <code>Interpolations</code> and <code>GeneralAstrodynamics</code>&#33;</p>
+<pre><code class=language-julia >using Plots
+using GeneralAstrodynamics
+using Unitful, UnitfulAstro
+
+
+earth &#61; interpolator&#40;&quot;Earth.txt&quot;&#41;
+
+timerange &#61; range&#40;earth.timespan&#91;1&#93;; stop &#61; earth.timespan&#91;1&#93; &#43; 1u&quot;yr&quot;, length &#61; 10_000&#41;
+
+earth_options &#61; &#40;; label &#61; &quot;Earth&quot;, color &#61; :darkblue, linewidth  &#61; 1.5&#41;
+sun_options   &#61; &#40;; label &#61; &quot;Sun&quot;,   color &#61; :yellow,   markersize &#61; 7&#41;
+
+earth_positions &#61; map&#40;t -&gt; uconvert.&#40;u&quot;AU&quot;, position_vector&#40;R2BPOrbit&#40;earth.state&#40;t&#41;, Sun&#41;&#41;&#41;, timerange&#41;
+sun_positions   &#61; &#91;&#91;0.0&#93;, &#91;0.0&#93;, &#91;0.0&#93;&#93;
+
+figure &#61; plotpositions&#40;earth_positions; earth_options...&#41;
+scatter&#33;&#40;figure, sun_positions...; sun_options..., title &#61; &quot;Earth-Moon Ephemeris&quot;, dpi &#61; 150&#41;</code></pre>
+
+<img src="/assets/earth_ephemeris.png" alt="Ephemeris data for Earth!" style="width: 98%;">
+
+<div class=page-foot >
+  <div class=copyright >
+    &copy; Joey Carpinelli. Last modified: May 24, 2021. <br>Website built with <a href="https://github.com/tlienart/Franklin.jl">Franklin.jl</a> and the <a href="https://julialang.org">Julia programming language</a>.
+  </div>
+</div>
+</div>
+    </div>  
+    
+    
+        <script src="/libs/highlight/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();hljs.configure({tabReplace: '    '});</script>
