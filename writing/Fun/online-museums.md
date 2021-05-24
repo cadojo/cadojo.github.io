@@ -35,6 +35,6 @@ American writers throughout history. Their [Frederick Douglass Exhibit](https://
 
 ## [National Women's History Museum](https://www.womenshistory.org/womens-history/online-exhibits) 
 The National Women's History Museum has an insane amount of cool exhibits online. 
-The [NASA](https://www.womenshistory.org/exhibits/women-nasa) looks really cool, but so 
+The [NASA](https://www.womenshistory.org/exhibits/women-nasa) exhibit looks really cool, but so 
 do so many others.
 
