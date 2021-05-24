@@ -1,7 +1,7 @@
-@def title="Online Museums!"
+@def title="Online Museums"
 @def rss = "A compilation of some interesting online exhibits."
 @def rss_title = "Online Museums!"
-@def tags = ["blog", "writing", "learn"]
+@def tags = ["blog", "writing", "learn", "fun"]
 @def ispost=true
 
 @def bio="A quick collection of fun online exhibits!"

@@ -54,18 +54,19 @@ html {
   --accent-color: #5b8a72;
   --accent-transparent-color: #5b8a72b4;
   --sidebar-link-color: #ffffff;
-  --accent-offset-color: #56776c;
-  --light-text-color: #56776c;
-  --abbreviation-color: #555;
-  --block-quote-color: #56776c;
-  --strong-text-color: #56776c;
-  --link-color: #56776c;
+  --accent-offset-color: rgb(51, 51, 51);
+  --light-text-color: #95c9ae;
+  --abbreviation-color: rgb(51, 51, 51);
+  --block-quote-color: rgb(51, 51, 51);
+  --strong-text-color: rgb(51, 51, 51);
+  --link-color: #5b8a72;
   --primary-color: rgb(255, 255, 255);
   --primary-offset-color: rgb(253,245,220);
+  --block-background: #95c9ae42;
   --primary-color-transparent: rgba(255, 255, 255, 0.5);
   --primary-text-color: rgb(51, 51, 51);
-  --misc-color: #56776c;
-  --misc-offset-color: #56776c;
+  --misc-color: rgb(51, 51, 51);
+  --misc-offset-color: #55b8a726776c;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -73,18 +74,19 @@ html {
     --accent-color: #112d4e;
     --accent-transparent-color: #112d4e;
     --sidebar-link-color: #f9f7f7;
-    --accent-offset-color: #3f72af;
+    --accent-offset-color: #f9f7f7;
     --light-text-color: #3f72af;
     --abbreviation-color: #f9f7f7;
     --block-quote-color: #f9f7f7;
     --strong-text-color: #f9f7f7;
-    --link-color: #6896cf;
+    --link-color: #4b7dbb;
     --primary-color: #040404;
     --primary-offset-color: #193b63;
+    --block-background: #3f71af5e;
     --primary-color-transparent: #dbe2efc0;
     --primary-text-color: #f9f7f7;
-    --misc-color: #f9f7f7;
-    --misc-offset-color: #f9f7f7;
+    --misc-color: #3f72af;
+    --misc-offset-color: #2d517e;
   }
   .profile-picture {
     content: url("/assets/profile-dark.png");
@@ -108,6 +110,7 @@ body {
 /* No `:visited` state is required by default (browsers will use `a`) */
 a {
   color: var(--link-color);
+  font-weight: bold;
   text-decoration: none;
 }
 
@@ -383,4 +386,16 @@ a.sidebar-nav-item:focus {
     margin-left: 15rem;
     margin-right: 2rem;
   }
+}
+
+.post-bio {
+  font-size: medium;
+}
+
+.post-title { 
+  font-size: larger;
+}
+
+.post-stamp {
+  font-size: small;
 }

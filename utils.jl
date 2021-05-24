@@ -99,9 +99,8 @@ function postcard(path)
     date = postelement(path, "publishdate")
 
     return """
-    <div class="postcard">
-        <img class="post-pic" src="$picture" alt="$alt">
-        <p class="post-bio"> <b class="post-title"><a href=../$(replace(replace(path, " "=>"%20"), ".md"=>""))>$title</a></b> <br> <i class="post-stamp">Posted on $date </i> <br><br> $bio </p>
+    <div class="blogpost">
+        <p class="post-bio"> <b class="post-title"><a href=../$(replace(replace(path, " "=>"%20"), ".md"=>""))>$title</a></b> <br> <i class="post-stamp">Posted on $date </i> <br> $bio </p>
     </div>
     """
 end
@@ -119,12 +118,12 @@ function lx_allposts(com, _)
     content = Franklin.content(com.braces[1])
 
     # Hardcoded helper functions
-    ismd(f)       =  endswith(f, ".md")
-    onlymd(l)     =  filter(ismd, l)
-    onlydir(l)    =  filter(isdir, l)
-    onlyname(s)   =  last(splitpath(s))
-    getdate(f)    =  Dates.unix2datetime(stat(f).mtime)
-    sortbydate(l) =  sort(l; by=getdate)
+    ismd(f)          =  endswith(f, ".md")
+    onlymd(l)        =  filter(ismd, l)
+    onlydir(l)       =  filter(isdir, l)
+    onlyname(s)      =  last(splitpath(s))
+    getdate(f)       =  Dates.unix2datetime(stat(f).mtime)
+    sortbydate(l)    =  sort(l; by=getdate)
     onlypublished(l) = filter(ispublished, l)
 
     # Get subdirs

@@ -27,17 +27,6 @@ For instance:
 * \newcommand{\phrase}{This is a long phrase to copy.}
 -->
 \newcommand{\html}[1]{~~~#1~~~}
-\newcommand{\profilepic}[2]{\html{<img class="profile-pic" src="#1" alt="#2">}}
-\newcommand{\profilebio}[1]{\html{
-    <div class="profile-bio">
-        !#1
-        <br> <br>
-        <a href="mailto:jdcarpinelli@gmail.com" target="_blank" <i class="fas fa-envelope"></i></a> &thinsp;
-        <a href="https://github.com/cadojo" target="_blank" <i class="fab fa-github"></i></a> &thinsp;
-        <a href="https://instagram.com/joeycarpinelli" target="_blank"  <i class="fab fa-instagram"></i></a> &thinsp;
-        <a href="https://twitter.com/code_typed" target="_blank" <i class="fab fa-twitter"></i></a>
-    </div>}
-}
 
 \newcommand{\makeprofile}[3]{
     @@profile
