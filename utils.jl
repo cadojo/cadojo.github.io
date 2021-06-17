@@ -22,7 +22,6 @@ function ispublished(path)
     return postelement(path, "published") == "true"
 end
 
-
 """
 Finds the title of a post.
 """
@@ -37,6 +36,40 @@ function posttitle(path)
         end
     end
     return
+end
+
+
+"""
+Is this post a Pluto notebook?
+"""
+function ispluto(path)
+    isfile(path) || throw(ArgumentError("File $path does not exist!"))
+    lines = open(path, "r") do file
+        readlines(file)
+    end
+    for line ∈ lines
+        if occursin("@def pluto", line)
+            return true
+        end
+    end
+    return false
+end
+
+"""
+What's the path for the Pluto notebook HTML file?
+"""
+function plutopath(path)
+    isfile(path) || throw(ArgumentError("File $path does not exist!"))
+    lines = open(path, "r") do file
+        readlines(file)
+    end
+    for line ∈ lines
+        if occursin("@def pluto", line)
+            return split(line, "\"")[2] |> string
+        end
+    end
+
+    throw(ErrorException("No path is specified in the Pluto blog post!"))
 end
 
 """
@@ -98,9 +131,10 @@ function postcard(path)
     picture, alt = postelement.(path, ("picture", "picturealt"))
     date = postelement(path, "publishdate")
 
+    link = ispluto(path) ? plutopath(path) : replace(replace(path, " "=>"%20"), ".md"=>"")
     return """
     <div class="blogpost">
-        <p class="post-bio"> <b class="post-title"><a href=../$(replace(replace(path, " "=>"%20"), ".md"=>""))>$title</a></b> <br> <i class="post-stamp">Posted on $date </i> <br> $bio </p>
+        <p class="post-bio"> <b class="post-title"><a href=../$link>$title</a></b> <br> <i class="post-stamp">Posted on $date </i> <br> $bio </p>
     </div>
     """
 end
@@ -124,7 +158,7 @@ function lx_allposts(com, _)
     onlyname(s)      =  last(splitpath(s))
     getdate(f)       =  Dates.unix2datetime(stat(f).mtime)
     sortbydate(l)    =  sort(l; by=getdate)
-    onlypublished(l) = filter(ispublished, l)
+    onlypublished(l) =  filter(ispublished, l)
 
     # Get subdirs
     subdirs = readdir("writing"; join=true) |> onlydir .|> onlyname |> sort
