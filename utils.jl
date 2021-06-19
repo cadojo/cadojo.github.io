@@ -134,7 +134,7 @@ function postcard(path)
     if ispluto(path)
         filename = string(split(plutopath(path), "/")[end-1]) * ".html"
         pathname = replace(plutopath(path), "/index.html"=>"")
-        read(`mkdir $pathname`, String)
+        isdir(pathname) || read(`mkdir $pathname`, String)
         read(`cp writing/Controls/$filename $pathname/index.html`)
         link = plutopath(path)
     else
