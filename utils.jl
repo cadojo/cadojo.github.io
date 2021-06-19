@@ -131,7 +131,16 @@ function postcard(path)
     picture, alt = postelement.(path, ("picture", "picturealt"))
     date = postelement(path, "publishdate")
 
-    link = ispluto(path) ? plutopath(path) : replace(replace(path, " "=>"%20"), ".md"=>"")
+    if ispluto(path)
+        filename = string(split(plutopath(path), "/")[end-1]) * ".html"
+        pathname = replace(plutopath(path), "/index.html"=>"")
+        read(`mkdir $pathname`, String)
+        read(`cp writing/Controls/$filename $pathname/index.html`)
+        link = plutopath(path)
+    else
+        link = replace(replace(path, " "=>"%20"), ".md"=>"")
+    end
+
     return """
     <div class="blogpost">
         <p class="post-bio"> <b class="post-title"><a href=../$link>$title</a></b> <br> <i class="post-stamp">Posted on $date </i> <br> $bio </p>
