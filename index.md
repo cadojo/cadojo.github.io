@@ -9,7 +9,7 @@ Right now, I'm particularly interested in astrodynamics and aerospace controls. 
 Julia Programming Language is my tool of choice.
 
 \note{💻 Why Julia?}{
-    As a language, Julia feels like a modern and fast competitor to MATLAB and Python. 
+    As a language, [Julia](https://julialang.org) feels like a modern and fast competitor to MATLAB and Python. 
     Package interoperability is incredible, thanks to the ability to define methods 
     after a type is defined. Julia has an excellent package manager built-in. 
     Another happy consequence of switching to Julia -- your code is much faster in
@@ -35,7 +35,7 @@ _More detail about what I'm working on is provided on the
 [projects](https://jcarpinelli.dev/projects) page,
 but I wanted to highlight the projects I'm most excited about here!_
 
-\note{✈️ Control Theory Fundamentals}{
+\note{✈️ [Control Theory Fundamentals](https://jcarpinelli.dev/ControlTheoryNotes.jl/dev)}{
     I'm working on a comprehensive, public note-set for fundamental control theory concepts. 
     My end goal is for these notes to walk through the highlights of the following traditional
     engineering curriculums: Linear Systems, Linear Controls & Analysis, Nonlinear Controls & Analysis. 
@@ -43,7 +43,7 @@ but I wanted to highlight the projects I'm most excited about here!_
     if you have any questions or suggestions!
 }
 
-\note{🚀 GeneralAstrodynamics.jl}{
+\note{🚀 [GeneralAstrodynamics.jl](https://github.com/cadojo/GeneralAstrodynamics.jl)}{
     I am actively developing a general-purpose astrodynamics package with Julia. The 
     package is called `GeneralAstrodynamics`, and it currently provides 
     types, common calculations, iterative solvers, plotting, and propagation for orbits within

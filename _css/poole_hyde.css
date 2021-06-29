@@ -426,7 +426,7 @@ a.sidebar-nav-item:focus {
   padding: 1em;
 }
 
-.note .content a {
+.note a {
   color: var(--sidebar-link-color);
   font-weight: bold;
   text-decoration: none;
