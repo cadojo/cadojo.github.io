@@ -38,7 +38,7 @@ but I wanted to highlight the projects I'm most excited about here!_
 \note{✈️ [Control Theory Fundamentals](https://jcarpinelli.dev/ControlTheoryNotes.jl/dev)}{
     I'm working on a comprehensive, public note-set for fundamental control theory concepts. 
     My end goal is for these notes to walk through the highlights of the following traditional
-    engineering curriculums: Linear Systems, Linear Controls & Analysis, Nonlinear Controls & Analysis. 
+    engineering courses: Linear Systems, Linear Controls & Analysis, Nonlinear Controls & Analysis. 
     Check out the \html{<a href="https://jcarpinelli.dev/ControlTheoryNotes.jl/stable">notes</a>}, and let me know 
     if you have any questions or suggestions!
 }
