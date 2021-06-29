@@ -23,7 +23,7 @@
 
 <item>
   <title>
-    <![CDATA[  An introduction to control theory.  ]]>
+    <![CDATA[  Announcing public control thoery notes  ]]>
   </title>
   <link> https://cadojo.github.io/writing/Controls/introduction-to-controls/index.html </link>
   <guid> https://cadojo.github.io/writing/Controls/introduction-to-controls/index.html </guid>
@@ -31,7 +31,7 @@
     <![CDATA[  An introduction to control theory.  ]]>
   </description>  
     
-  <pubDate>Sat, 19 Jun 2021 00:00:00 +0000</pubDate>  
+  <pubDate>Tue, 29 Jun 2021 00:00:00 +0000</pubDate>  
   
   
   <atom:author>
@@ -50,7 +50,7 @@
     <![CDATA[  How to use JPL&#39;s HORIZONS&#39; command line interface.  ]]>
   </description>  
     
-  <pubDate>Sat, 19 Jun 2021 00:00:00 +0000</pubDate>  
+  <pubDate>Tue, 29 Jun 2021 00:00:00 +0000</pubDate>  
   
   
   <atom:author>
