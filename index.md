@@ -4,18 +4,50 @@
 
 # About Me
 
-Hello! I'm a GN&C Engineer at NASA's Johnson Space Center, and a recent MS graduate from the University of 
-Maryland's Aerospace Engineering department. I also spend time working on open source scientific
-computing projects, primarily through the Julia programming language. 
+Hello! I'm a GN&C Engineer in the USA who is interested in open-source scientific-software development. 
+Right now, I'm particularly interested in astrodynamics and aerospace controls. The 
+Julia Programming Language is my tool of choice.
 
-## Active Projects
-I'm actively developing _GeneralAstrodynamics.jl_, a Julia package for common astrodynamics calculations.
-This package is available on [GitHub](https://github.com/cadojo/GeneralAstrodynamics.jl),
-and within Julia's [package registry](https://juliahub.com/ui/Packages/GeneralAstrodynamics/o9DTc).
-I'm developing a periodic orbit-finding implementation, and adding manifold perturbation 
-calculations to [develop](https://github.com/cadojo/Halo-Orbit-Explorations) 
-low-cost manifold-based interplanetary transfers. This investigation started as an astrodynamics 
-course project, and will continue in a personal capacity throughout 2021. 
+\note{💻 Why Julia?}{
+    As a language, Julia feels like a modern and fast competitor to MATLAB and Python. 
+    Package interoperability is incredible, thanks to the ability to define methods 
+    after a type is defined. Julia has an excellent package manager built-in. 
+    Another happy consequence of switching to Julia -- your code is much faster in
+    relation to pure Python, and is often faster than MATLAB too!
+}
 
-Additional 2021 (potential) projects include converting [electrical signals in plants to music](https://github.com/cadojo/PlantTranslator), developing [Pluto](https://github.com/fonsp/Pluto.jl) notebooks which walk through applied control for a [polynomial model](https://github.com/cadojo/PolynomialGTMModel) of NASA's GTM aircraft, and learning [Rust](https://www.rust-lang.org)!
+## Background
 
+I completed a B.S. in Electrical Engineering at the University of Maryland,
+and then completed an M.S. in Aerospace Engineering while working as a 
+Pathways Intern at NASA's Johnson Space Center (JSC). I'm now working as 
+an aerospace engineer full-time in the Aeroscience and Flight Mechanics 
+Division at JSC.
+
+## Interests
+
+* Hiking, gardening, climbing, and swimming
+* Controls engineering, astrodynamics, and open-source scientific software
+* Trying new coffees, teas, and beers 🍵
+
+## Highlights 
+_More detail about what I'm working on is provided on the 
+[projects](https://jcarpinelli.dev/projects) page,
+but I wanted to highlight the projects I'm most excited about here!_
+
+\note{✈️ Control Theory Fundamentals}{
+    I'm working on a comprehensive, public note-set for fundamental control theory concepts. 
+    My end goal is for these notes to walk through the highlights of the following traditional
+    engineering curriculums: Linear Systems, Linear Controls & Analysis, Nonlinear Controls & Analysis. 
+    Check out the \html{<a href="https://jcarpinelli.dev/ControlTheoryNotes.jl/stable">notes</a>}, and let me know 
+    if you have any questions or suggestions!
+}
+
+\note{🚀 GeneralAstrodynamics.jl}{
+    I am actively developing a general-purpose astrodynamics package with Julia. The 
+    package is called `GeneralAstrodynamics`, and it currently provides 
+    types, common calculations, iterative solvers, plotting, and propagation for orbits within
+    Restricted Two-body Problem and Circular-Restricted Three-body Problem dynamics. 
+    N-body types, calculations, plotting, and propagation are available in a previous release, and 
+    will soon be re-factored and re-released. Check it out on [GitHub](https://github.com/cadojo/GeneralAstrodynamics.jl)!
+}

@@ -55,14 +55,16 @@ html {
   --accent-transparent-color: #5b8a72b4;
   --sidebar-link-color: #ffffff;
   --accent-offset-color: rgb(51, 51, 51);
+  --note-background-color: #5b8a72b4;
+  --note-title-color: #5b8a72;
   --light-text-color: #95c9ae;
   --abbreviation-color: rgb(51, 51, 51);
   --block-quote-color: rgb(51, 51, 51);
   --strong-text-color: rgb(51, 51, 51);
   --link-color: #5b8a72;
   --primary-color: rgb(255, 255, 255);
-  --primary-offset-color: rgb(253,245,220);
-  --block-background: #95c9ae42;
+  --primary-offset-color: rgb(255, 255, 255);
+  --block-background: #95c9ae34;
   --primary-color-transparent: rgba(255, 255, 255, 0.5);
   --primary-text-color: rgb(51, 51, 51);
   --misc-color: rgb(51, 51, 51);
@@ -72,19 +74,21 @@ html {
 @media (prefers-color-scheme: dark) {
   html {
     --accent-color: #112d4e;
-    --accent-transparent-color: #112d4e;
-    --sidebar-link-color: #f9f7f7;
-    --accent-offset-color: #f9f7f7;
+    --accent-transparent-color: #112d4e9d;
+    --note-background-color: #112d4e;
+    --note-title-color: #2d517e;
+    --sidebar-link-color: #ffffff;
+    --accent-offset-color: #ffffff;
     --light-text-color: #3f72af;
-    --abbreviation-color: #f9f7f7;
-    --block-quote-color: #f9f7f7;
-    --strong-text-color: #f9f7f7;
+    --abbreviation-color: #ffffff;
+    --block-quote-color: #ffffff;
+    --strong-text-color: #ffffff;
     --link-color: #4b7dbb;
     --primary-color: #040404;
-    --primary-offset-color: #193b63;
+    --primary-offset-color: rgba(255, 255, 255);
     --block-background: #3f71af5e;
     --primary-color-transparent: #dbe2efc0;
-    --primary-text-color: #f9f7f7;
+    --primary-text-color: #ffffff;
     --misc-color: #3f72af;
     --misc-offset-color: #2d517e;
   }
@@ -140,7 +144,7 @@ h6 {
 
 h1 {
   font-size: 2rem;
-  color: var(--accent-offset-color);
+  color: var(--primary-text-color);
 }
 
 h2 {
@@ -398,4 +402,44 @@ a.sidebar-nav-item:focus {
 
 .post-stamp {
   font-size: small;
+}
+
+/*
+ * Pulled directly from 
+ * https://github.com/tlienart/Franklin.jl/blob/90297b184767ddf3fa3e8c28a3cb24ce1e862f83/docs/_css/jtd.css#L674
+ */ 
+.note {
+  margin-top: 1.5em;
+  width: 95%;
+  height: min-content;
+  background-color: var(--note-background-color);
+  border-radius: 5px;
+  margin-bottom: 1em;
+}
+
+.note .content {
+  text-align: left;
+  margin: 1em;
+  font-style: italic;
+  color: var(--primary-offset-color);
+  height: min-content;
+  padding: 1em;
+}
+
+.note .content a {
+  color: var(--sidebar-link-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.note .title{
+  font-size: 105%;
+  font-weight: bold;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding-left: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: var(--sidebar-link-color);
+  background: var(--note-title-color);
 }

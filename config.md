@@ -34,3 +34,6 @@ For instance:
     \profilebio{!#3}
     @@
 }
+
+\newcommand{\note}[2]{@@note @@title #1 @@ @@content #2 @@ @@}
+\newcommand{\warn}[1]{@@warning @@title ⚠ Warning!@@ @@content #1 @@ @@}
