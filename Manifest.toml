@@ -705,9 +705,9 @@ uuid = "56ddb016-857b-54e1-b83d-db4d58db5568"
 
 [[LoopVectorization]]
 deps = ["ArrayInterface", "DocStringExtensions", "IfElse", "LinearAlgebra", "OffsetArrays", "Polyester", "Requires", "SLEEFPirates", "Static", "StrideArraysCore", "ThreadingUtilities", "UnPack", "VectorizationBase"]
-git-tree-sha1 = "f7e54a5098d6b8f644c94c46ac55e9df70a06578"
+git-tree-sha1 = "6b92532432901b073292cf5e2d6a928651d125d5"
 uuid = "bdcacae8-1622-11e9-2a5c-532679323890"
-version = "0.12.47"
+version = "0.12.48"
 
 [[MacroTools]]
 deps = ["Markdown", "Random"]
