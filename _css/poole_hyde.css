@@ -48,11 +48,12 @@ body {
 }
 
 html {
-  font-family: ff-tisa-sans-web-pro;
+  font-family: ff-tisa-sans-web-pro; serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 1.5;
+
   --accent-color: #5b8a72;
   --accent-transparent-color: #5b8a72b4;
   --sidebar-link-color: #ffffff;
@@ -75,6 +76,12 @@ html {
 
 @media (prefers-color-scheme: dark) {
   html {
+    font-family: ff-tisa-sans-web-pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.5;
+
     --accent-color: #112d4e;
     --accent-transparent-color: #112d4e9d;
     --note-background-color: #112d4e;
@@ -388,7 +395,7 @@ a.sidebar-nav-item:focus {
 
 @media (min-width: 768px) {
   .content {
-    max-width: 45rem;
+    max-width: 53rem;
     margin-left: 15rem;
     margin-right: 2rem;
   }
