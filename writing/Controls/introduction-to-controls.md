@@ -16,7 +16,7 @@ engineering requires a strong understanding of the foundations of control
 design and analysis. It helps to have a refresher every now and then!
 
 That's why I'm writing this post -- I'd like to announce publicly available 
-[notes](https://jcarpinelli.dev/ControlTheoryNotes.jl/stable) that 
+[notes](https://jcarpinelli.dev/exploring-control-theory.jl/stable) that 
 I'm writing with the help of the Julia Programming Language, and _Documenter.jl_.
 I'll be walking through foundational concepts, and providing control design and 
 analysis examples with one concrete system: an approximate 

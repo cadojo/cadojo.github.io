@@ -5,7 +5,7 @@
 # {{title}}
 _What I'm working on in free time!_
 
-## [Control Theory Fundamentals](https://jcarpinelli.dev/ControlTheoryNotes.jl/stable)
+## [Exploring Control Theory](https://jcarpinelli.dev/exploring-control-theory.jl/stable)
 
 I'm writing a public note-set which walks through content typically taught in 
 a Linear Systems course, through content taught in Linear and Nonlinear Controls
