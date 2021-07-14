@@ -408,15 +408,15 @@ version = "0.10.18"
 
 [[Franklin]]
 deps = ["Dates", "DelimitedFiles", "DocStringExtensions", "ExprTools", "FranklinTemplates", "HTTP", "Literate", "LiveServer", "Logging", "Markdown", "NodeJS", "OrderedCollections", "Pkg", "REPL", "Random"]
-git-tree-sha1 = "6980906f1c87a38006846dd8a2ba45c63c977d1a"
+git-tree-sha1 = "ed84a69718060bdb1f3dcbb86d3c85b8a69b8a44"
 uuid = "713c75ef-9fc9-4b05-94a9-213340da978e"
-version = "0.10.41"
+version = "0.10.42"
 
 [[FranklinTemplates]]
 deps = ["LiveServer"]
-git-tree-sha1 = "04071bacb9faccd869b01af0803b2278fee95cf6"
+git-tree-sha1 = "24f4ee4d9e3ede316abf2169f93f7190681312b4"
 uuid = "3a985190-f512-4703-8d38-2a7944ed5916"
-version = "0.8.18"
+version = "0.8.19"
 
 [[FreeType2_jll]]
 deps = ["Artifacts", "Bzip2_jll", "JLLWrappers", "Libdl", "Pkg", "Zlib_jll"]
@@ -584,9 +584,9 @@ version = "2.1.0+0"
 
 [[JuliaFormatter]]
 deps = ["CSTParser", "CommonMark", "DataStructures", "Pkg", "Tokenize"]
-git-tree-sha1 = "9e7476b5e1dc749e525497eef53809893cb6c898"
+git-tree-sha1 = "671676423c7c70673d4d2f03f2be2d6741c6884e"
 uuid = "98e50ef6-434e-11e9-1051-2b60c6c9e899"
-version = "0.14.8"
+version = "0.15.1"
 
 [[LAME_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
@@ -714,9 +714,9 @@ version = "2.9.0"
 
 [[LiveServer]]
 deps = ["Crayons", "FileWatching", "HTTP", "Pkg", "Sockets", "Test"]
-git-tree-sha1 = "4db4abb8b7d8dadff178b8311e540c86dffcf97d"
+git-tree-sha1 = "99990da121ad310875b3c4dba5954eba54df8cfd"
 uuid = "16fef848-5104-11e9-1b77-fb7a48bbb589"
-version = "0.6.6"
+version = "0.7.0"
 
 [[LogExpFunctions]]
 deps = ["DocStringExtensions", "LinearAlgebra"]
@@ -740,9 +740,9 @@ uuid = "1914dd2f-81c6-5fcd-8719-6d5c9610ff09"
 version = "0.5.6"
 
 [[ManualMemory]]
-git-tree-sha1 = "80ccdd8143934c40a170ef3178af64b7905230bd"
+git-tree-sha1 = "71c64ebe61a12bad0911f8fc4f91df8a448c604c"
 uuid = "d125e4d3-2237-4719-b19c-fa641b8a4667"
-version = "0.1.3"
+version = "0.1.4"
 
 [[Markdown]]
 deps = ["Base64"]
@@ -780,9 +780,9 @@ uuid = "a63ad114-7e13-5084-954f-fe012c677804"
 
 [[ModelingToolkit]]
 deps = ["AbstractTrees", "ArrayInterface", "ConstructionBase", "DataStructures", "DiffEqBase", "DiffEqJump", "DiffRules", "Distributed", "Distributions", "DocStringExtensions", "DomainSets", "IfElse", "InteractiveUtils", "JuliaFormatter", "LabelledArrays", "Latexify", "Libdl", "LightGraphs", "LinearAlgebra", "MacroTools", "NaNMath", "NonlinearSolve", "RecursiveArrayTools", "Reexport", "Requires", "RuntimeGeneratedFunctions", "SafeTestsets", "SciMLBase", "Serialization", "Setfield", "SparseArrays", "SpecialFunctions", "StaticArrays", "SymbolicUtils", "Symbolics", "UnPack", "Unitful"]
-git-tree-sha1 = "9cc6e4543374e89b4a33c4b787b3ab6298a4cf78"
+git-tree-sha1 = "de57397f072d16fbd22a15ec03658e756e8fe4a7"
 uuid = "961ee093-0014-501f-94e3-6117800e7a78"
-version = "5.22.0"
+version = "5.23.0"
 
 [[MozillaCACerts_jll]]
 uuid = "14a3606d-f60d-562e-9121-12d972cd8159"
@@ -1354,9 +1354,9 @@ version = "1.0.1"
 
 [[VectorizationBase]]
 deps = ["ArrayInterface", "Hwloc", "IfElse", "Libdl", "LinearAlgebra", "Static"]
-git-tree-sha1 = "0ba060e248edfacacafd764926cdd6de51af1343"
+git-tree-sha1 = "1b5a87cc55f5e4b072eca187b115f1c01c61e092"
 uuid = "3d5dd08c-fd9d-11e8-17fa-ed2836048c2f"
-version = "0.20.19"
+version = "0.20.20"
 
 [[VertexSafeGraphs]]
 deps = ["LightGraphs"]

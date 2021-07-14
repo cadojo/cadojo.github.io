@@ -23,15 +23,15 @@
 
 <item>
   <title>
-    <![CDATA[  Using JPL&#39;s HORIZONS through the Command Line  ]]>
+    <![CDATA[  Posts  ]]>
   </title>
-  <link> https://cadojo.github.io/writing/Astrodynamics/horizons-via-terminal/index.html </link>
-  <guid> https://cadojo.github.io/writing/Astrodynamics/horizons-via-terminal/index.html </guid>
+  <link> https://cadojo.github.io/posts/index.html </link>
+  <guid> https://cadojo.github.io/posts/index.html </guid>
   <description>
-    <![CDATA[  How to use JPL&#39;s HORIZONS&#39; command line interface.  ]]>
+    <![CDATA[  Posts authored by Joey Carpinelli.  ]]>
   </description>  
     
-  <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>  
+  <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>  
   
   
   <atom:author>
@@ -42,15 +42,15 @@
 
 <item>
   <title>
-    <![CDATA[  Posts  ]]>
+    <![CDATA[  Using JPL&#39;s HORIZONS through the Command Line  ]]>
   </title>
-  <link> https://cadojo.github.io/posts/index.html </link>
-  <guid> https://cadojo.github.io/posts/index.html </guid>
+  <link> https://cadojo.github.io/writing/Astrodynamics/horizons-via-terminal/index.html </link>
+  <guid> https://cadojo.github.io/writing/Astrodynamics/horizons-via-terminal/index.html </guid>
   <description>
-    <![CDATA[  Posts authored by Joey Carpinelli.  ]]>
+    <![CDATA[  How to use JPL&#39;s HORIZONS&#39; command line interface.  ]]>
   </description>  
     
-  <pubDate>Mon, 12 Jul 2021 00:00:00 +0000</pubDate>  
+  <pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate>  
   
   
   <atom:author>
